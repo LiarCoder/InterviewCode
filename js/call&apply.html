@@ -1,0 +1,64 @@
+<!--
+ * @Description: 描述信息
+ * @Version: 0.1.0
+ * @Author: LiarCoder
+ * @Date: 2021-12-21 12:02:43
+ * @LastEditors: LiarCoder
+ * @LastEditTime: 2021-12-21 12:37:21
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>call & apply</title>
+</head>
+
+<body>
+  <script type="text/javascript">
+    Function.prototype._call = function (context, ...args) {
+      // 注意浏览器环境下默认的全局变量为 indow
+      context = context ? Object(context) : window;
+      context.func = this;
+      let result = context.func(...args);
+      delete context.func;
+      return result;
+    };
+
+    Function.prototype._apply = function (context, args) {
+      context = context ? Object(context) : window;
+      context.func = this;
+      let result = args ? context.func(...args) : context.func();
+      delete context.func;
+      return result;
+    };
+
+    let name = "global";
+    let liar = {
+      name: "liar",
+      age: 21,
+    };
+
+    function sayName() {
+      console.log(`my name is ${this.name}, my args are ${[...arguments]}`);
+    }
+
+    sayName._call();
+    sayName._call(1, 2, 3, 4);
+    sayName._call(liar, 2, 3, 4);
+
+    sayName._apply();
+    sayName._apply(1, [2, 3, 4]);
+    sayName._apply(liar, [2, 3, 4]);
+  </script>
+  my name is global, my args are
+  my name is undefined, my args are 2,3,4
+  my name is liar, my args are 2,3,4
+  my name is global, my args are
+  my name is undefined, my args are 2,3,4
+  my name is liar, my args are 2,3,4
+</body>
+
+</html>
