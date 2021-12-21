@@ -1,0 +1,120 @@
+<!--
+ * @Description: 两列布局，一列定宽，另一列自适应
+ * @Version: 0.1.0
+ * @Author: LiarCoder
+ * @Date: 2021-12-21 17:06:09
+ * @LastEditors: LiarCoder
+ * @LastEditTime: 2021-12-21 17:44:43
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>两列布局</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      height: 200px;
+      background-color: gray;
+      margin: 10px 0;
+    }
+
+    .left {
+      background-color: tomato;
+      height: 100%;
+      width: 100px;
+      margin-right: 20px;
+    }
+
+    .right {
+      background-color: cadetblue;
+      height: 100%;
+    }
+
+    /* .container1::after {
+      content: '';
+      display: block;
+      clear: both;
+    } */
+
+    .left1 {
+      float: left;
+    }
+
+    .right1 {
+      float: left;
+      width: calc(100% - 120px);
+    }
+
+    /* .container2::after {
+      content: '';
+      display: block;
+      clear: both;
+    } */
+
+    .left2 {
+      float: left;
+    }
+
+    .right2 {
+      margin-left: 120px;
+    }
+
+    .left3 {
+      float: left;
+    }
+
+    .right3 {
+      overflow: hidden;
+    }
+
+    .container4 {
+      display: flex;
+    }
+
+    .right4 {
+      flex: 1;
+    }
+
+    .container5 {
+      display: grid;
+      grid-template-columns: auto 1fr;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container container1">
+    <div class="left left1">定宽1</div>
+    <div class="right right1">自适应1</div>
+  </div>
+
+  <div class="container container2">
+    <div class="left left2">定宽2</div>
+    <div class="right right2">自适应2</div>
+  </div>
+
+  <div class="container container3">
+    <div class="left left3">定宽3</div>
+    <div class="right right3">自适应3</div>
+  </div>
+
+  <div class="container container4">
+    <div class="left left4">定宽4</div>
+    <div class="right right4">自适应4</div>
+  </div>
+
+  <div class="container container5">
+    <div class="left left5">定宽5</div>
+    <div class="right right5">自适应5</div>
+  </div>
+</body>
+
+</html>

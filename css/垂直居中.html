@@ -1,0 +1,194 @@
+<!--
+ * @Description: 垂直居中布局
+ * @Version: 0.1.0
+ * @Author: LiarCoder
+ * @Date: 2021-12-21 15:38:17
+ * @LastEditors: LiarCoder
+ * @LastEditTime: 2021-12-21 16:56:03
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>垂直水平居中布局</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-size: 0.8rem;
+    }
+
+    .parent {
+      margin: 10px;
+      background-color: gray;
+      width: 200px;
+      height: 200px;
+    }
+
+    .child {
+      text-align: center;
+      line-height: 60px;
+      background-color: tomato;
+      width: 80px;
+      height: 60px;
+    }
+
+    .parent1 {
+      position: relative;
+    }
+
+    .child1 {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      margin: auto;
+    }
+
+    .parent2 {
+      position: relative;
+    }
+
+    .child2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .parent3 {
+      position: relative;
+    }
+
+    .child3 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -30px;
+      margin-left: -40px;
+    }
+
+    .parent4 {
+      position: relative;
+    }
+
+    .child4 {
+      position: absolute;
+      top: calc(50% - 30px);
+      left: calc(50% - 40px);
+    }
+
+    .parent5 {
+      line-height: 200px;
+      text-align: center;
+    }
+
+    .child5 {
+      background-color: tomato;
+      display: inline-block;
+      width: 150px;
+      vertical-align: middle;
+      line-height: initial;
+    }
+
+    .parent6 {
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+    }
+
+    .child6 {
+      background-color: tomato;
+      display: inline-block;
+      width: 150px;
+    }
+
+    .parent7 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .parent8 {
+      display: flex;
+    }
+
+    .child8 {
+      margin: auto;
+    }
+
+    .parent9 {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .parent10 {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .parent11 {
+      display: grid;
+    }
+
+    .child11 {
+      align-self: center;
+      justify-self: center;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="parent parent1">
+    <div class="child child1">居中元素1</div>
+  </div>
+
+  <div class="parent parent2">
+    <div class="child child2">居中元素2</div>
+  </div>
+
+  <div class="parent parent3">
+    <div class="child child3">居中元素3</div>
+  </div>
+
+  <div class="parent parent4">
+    <div class="child child4">居中元素4</div>
+  </div>
+
+  <div class="parent parent5">
+    <div class="child5">居中元素5</div>
+  </div>
+
+  <div class="parent parent6">
+    <div class="child6">居中元素6</div>
+  </div>
+
+  <div class="parent parent7">
+    <div class="child child7">居中元素7</div>
+  </div>
+
+  <div class="parent parent8">
+    <div class="child child8">居中元素8</div>
+  </div>
+
+  <div class="parent parent9">
+    <div class="child child9">居中元素9</div>
+  </div>
+
+  <div class="parent parent10">
+    <div class="child child10">居中元素10</div>
+  </div>
+
+  <div class="parent parent11">
+    <div class="child child11">居中元素11</div>
+  </div>
+</body>
+
+</html>
